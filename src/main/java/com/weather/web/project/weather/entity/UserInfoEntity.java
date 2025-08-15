@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class UserInfoEntity {
     @Id
-    @SequenceGenerator(name = "user_infoSequence", sequenceName = "user_info_sequence", initialValue = 3, allocationSize = 1)
+    @SequenceGenerator(name = "user_infoSequence", sequenceName = "user_info_sequence", initialValue = 2, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_infoSequence")
     @Column(name = "id", nullable = false)
     private Long id;

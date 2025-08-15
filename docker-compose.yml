@@ -10,11 +10,11 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
     ports:
-      - "0.0.0.0:5460:5432"
+      - "0.0.0.0:5457:5432"
     networks:
       - weather_net
     healthcheck: # Добавляем проверку готовности БД
-      test: [ "CMD-SHELL", "pg_isready -U docker -d hungman" ]
+      test: [ "CMD-SHELL", "pg_isready -U docker -d weather_db" ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -31,7 +31,7 @@ services:
       weather_postgres_db:
         condition: service_healthy  # Ждем готовности БД
     ports:
-      - "0.0.0.0:9099:9099"
+      - "0.0.0.0:9097:9097"
     networks:
       - weather_net
     volumes:
