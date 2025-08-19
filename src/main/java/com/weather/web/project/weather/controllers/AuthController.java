@@ -22,6 +22,7 @@ public class AuthController {
         if ("auth".equals(resultReg)) {
             return "redirect:/autentificate";
         }
+
         return "reg-exception";
     }
 

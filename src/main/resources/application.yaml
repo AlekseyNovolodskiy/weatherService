@@ -18,7 +18,7 @@ spring:
     user: docker
     password: docker
     url: jdbc:postgresql://weather_postgres_db:5432/weather_db
-  #    url: jdbc:postgresql://localhost:5460/hungman
+  #    url: jdbc:postgresql://localhost:5457/weather_db
 #  jdbc:postgresql://weather_postgres_db:5432/weather_db
 
 logging:
