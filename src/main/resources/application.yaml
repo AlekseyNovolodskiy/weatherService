@@ -39,5 +39,4 @@ logging:
 server:
   port: '9097'
 
-key:
-  3f9122f8f42dd5f20097c80af15e5f0c
+key: 3f9122f8f42dd5f20097c80af15e5f0c
