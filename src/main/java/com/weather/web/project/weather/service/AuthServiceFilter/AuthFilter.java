@@ -15,14 +15,10 @@ public class AuthFilter implements Filter {
                          FilterChain chain) throws IOException, ServletException {
 
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-        HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-
-
-        // Проверяем авторизацию
         String username = extractUsernameFromCookie(httpRequest);
         if(username != null) {
-            request.setAttribute("currentUser", username); // Добавляем пользователя в атрибуты
+            request.setAttribute("currentUser", username);
             chain.doFilter(request, response);
         }
     }
@@ -42,7 +38,7 @@ public class AuthFilter implements Filter {
     private String validateAndGetUsername(String token) {
         try {
             String decoded = new String(Base64.getDecoder().decode(token));
-            return decoded.split(":")[0]; // Возвращаем только логин
+            return decoded.split(":")[0];
         } catch(Exception e) {
             return null;
         }
